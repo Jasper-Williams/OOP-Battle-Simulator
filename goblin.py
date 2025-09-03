@@ -19,8 +19,9 @@ class Goblin:
 
     def take_damage(self, damage):
         self.health -= damage
-        # TODO We should prevent the goblins health from going into the NEGATIVE
-        print(f"{self.name} takes {damage} damage. Health is now {self.health}.")
+        if damage > self.health:
+            self.health = 0
+        print(f"{self.name} takes {damage} damage. health is now {self.health}.")
 
     def is_alive(self):
         return self.health > 0
