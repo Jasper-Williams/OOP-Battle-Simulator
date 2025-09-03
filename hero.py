@@ -21,15 +21,14 @@ class Hero:
         self.attack_power = random.randint(0, 100)
 
     def strike(self):
-        return self.attack_power
-    
-    def critical_strike(self):
+        hero_damage = 0
         chance = random.randint(1, 2)
         if chance == 1:
             print("Critical Strike!")
             return self.attack_power * 2
         else:
             return self.attack_power
+    
     
     def receive_damage(self, damage):
         self.health -= damage
