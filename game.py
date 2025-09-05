@@ -2,6 +2,7 @@
 import random
 from goblin import Goblin
 from hero import Hero
+from boss import BOSS_BANDIT
 
 
 def main():
@@ -12,14 +13,14 @@ def main():
     hero = Hero("Maxwell")
 
     # Create goblins ༼ ºل͟º ༽ ༼ ºل͟º ༽ ༼ ºل͟º ༽
-    goblins = [Goblin(f"Goblin {i+1}") for i in range(5)]
+    goblins = [Goblin(f"Goblin {i+1}") for i in range(15)]
 
     # Keep track of how many goblins were defeated
     defeated_goblins = 0
 
     # Battle Loop
     total_damage_dealt = 0
-    round_of_game =0
+    round_of_game = 0
     while hero.is_alive() and any(goblin.is_alive() for goblin in goblins):
         print("\nNew Round!")
 
@@ -42,6 +43,9 @@ def main():
                 print(f"{goblin.name} attacks hero for {damage} damage!")
                 hero.receive_damage(damage)
         round_of_game += 1
+        
+
+        
         print(f"End of Round {round_of_game}. Hero's health: {hero.health}")
     print(f"There were {round_of_game} rounds in this game.")
 
