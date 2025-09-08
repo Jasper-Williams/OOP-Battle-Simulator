@@ -17,11 +17,10 @@ class Hero:
 
     def __init__(self, name):
         self.name = name
-        self.health = 1000
-        self.attack_power = random.randint(100, 200)
+        self.health = 10000
+        self.attack_power = random.randint(1000, 2000)
 
     def strike(self):
-        hero_damage = 0
         chance = random.randint(1, 2)
         if chance == 1:
             print("Critical Strike!")
