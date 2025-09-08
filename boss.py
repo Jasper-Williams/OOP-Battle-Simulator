@@ -12,7 +12,7 @@ class BOSS_BANDIT(Enemy):
         return random.randint(1, self.attack_power)
 
     def dash(self):
-        dash_chance = random.randint(1, 2)
+        dash_chance = random.randint(1, 3)
         if dash_chance == 1:
             input("Press Enter to see the Boss Bandit dash!")
             if input == "":
